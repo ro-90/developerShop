@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Producto</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/productForm.css">
+</head>
+<body>
+  <% include('partials/header') %>
+  <main>
+    <h2>Crear Producto</h2>
+    <form action="/productEdit" method="post" enctype="multipart/form-data">
+      <label for="name">Nombre del producto:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="description">Descripción:</label>
+      <textarea id="description" name="description" required></textarea>
+      <label for="image">Imagen:</label>
+      <input type="file" id="image" name="image" required>
+      <button type="submit">Crear Producto</button>
+    </form>
+  </main>
+  <% include('partials/footer') %>
+</body>
+</html>

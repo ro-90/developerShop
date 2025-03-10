@@ -1,0 +1,25 @@
+@import url('login.css');
+@import url('register.css');
+@import url('productCartl.css');
+@import url('productDetail.css');
+@import url('style.css');
+header {
+    position: relative;
+  }
+  .busqueda{width: 400px;
+    height: 50px;
+    position: absolute;
+    
+     margin-left: 500px;
+     margin-bottom:500px;
+   }
+   
+   
+   
+   .lupa {
+     position: absolute; 
+     top: 150px;
+     right: 500px;
+     text-align: center;
+     margin-bottom: 0; 
+     margin-left: 0;}

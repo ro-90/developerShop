@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrar Productos</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h2>Administrar Productos</h2>
+    <a href="/productAdd" class="btn">Crear Nuevo Producto</a>
+    <table>
+      <head>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Imagen</th>
+          <th>Acciones</th>
+        </tr>
+      </head>
+      <body>
+        <% product.forEach(product => { %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><img src="<%= product.image %>" alt="<%= product.name %>" width="50"></td>
+            <td>
+              <a href="/productEdit/<%= product.id %>" class="btn">Editar</a>
+              <a href="/productDelete/<%= product.id %>" class="btn">Eliminar</a>
+            </td>
+          </tr>
+        <% }) %>
+      </body>
+    </table>
+  </main>
+  <%- include('partials/footer') %>
+</body>
+</html>

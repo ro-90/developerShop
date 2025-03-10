@@ -1,0 +1,46 @@
+[ {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "securepassword123",
+    "category": "developer",
+    "image": "profile.jpg"
+},
+
+{
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "password": "anotherpassword456",
+    "category": "designer",
+    "image": "profile2.jpg"
+},
+{
+    "id": 3,
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alice.johnson@example.com",
+    "password": "yetanotherpassword789",
+    "category": "manager",
+    "image": "profile3.jpg"
+},
+{
+    "id": 4,
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "email": "bob.brown@example.com",
+    "password": "password1234",
+    "category": "developer",
+    "image": "profile4.jpg"
+},
+{
+    "id": 5,
+    "firstName": "Charlie",
+    "lastName": "Davis",
+    "email": "charlie.davis@example.com",
+    "password": "password5678",
+    "category": "tester",
+    "image": "profile5.jpg"
+}]

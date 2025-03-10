@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "name": "Auriculares con cable",
+        "description": "auriculares con cable",
+        "image": "auriculares.jpg",
+        "category": "accesorios",
+        "colors": ["rojo", "azul","verde"],
+        "price": 19.99
+    },
+    {
+        "id": 2,
+        "name": "buzo negro java",
+        "description": "buzo negro java ",
+        "image": "buzoNegraJava.jpg",
+        "category": "buzos",
+        "colors": ["verde", "amarillo"],
+        "price": 29.99
+    },
+    {
+        "id": 3,
+        "name": "buzo negro google",
+        "description": "buzo de algodon buena calida",
+        "image": "buzoNegroGoogle.jpg",
+        "category": "buzos",
+        "colors": ["negro", "blanco"],
+        "price": 39.99
+    },
+
+
+{
+    "id": 4,
+    "name": "buzo negro js",
+    "description": "buzo de algodon unisex",
+    "image": "buzoNegroJs.jpg",
+    "category": "buzos",
+    "colors": ["negro", "naranja"],
+    "price": 49.99
+},
+{
+    "id": 5,
+    "name": "remera amarilla js",
+    "description": "remera js unisex,de algodo",
+    "image": "remeraAmarillaJs.jpg",
+    "category": "remeras",
+    "colors": ["rosa","amarillo", "gris"],
+    "price": 59.99
+},
+{
+    "id": 6,
+    "name": "remera amarilla redux",
+    "description": "Descripción del producto 6",
+    "image": "remeraAmarillaRedux.jpg",
+    "category": "remeras",
+    "colors": ["azul","amarillo", "verde"],
+    "price": 69.99
+},
+{
+    "id": 7,
+    "name": "remera blanca angular",
+    "description": "Descripción del producto 7",
+    "image": "remeraBlancaAngular.jpg",
+    "category": "remeras",
+    "colors": ["rojo","blanco", "negro"],
+    "price": 79.99
+},
+{
+    "id": 8,
+    "name": "remera celeste drupal",
+    "description": "Descripción del producto 8",
+    "image": "remeraCelesteDrupal.jpg",
+    "category": "remeras",
+    "colors": ["blanco","celeste", "amarillo"],
+    "price": 89.99
+},
+{
+    "id": 9,
+    "name": "remera gris",
+    "description": "Descripción del producto 9",
+    "image": "remeraGris.jpg",
+    "category": "remeras",
+    "colors": ["morado", "gris"],
+    "price": 99.99
+},
+{
+    "id": 10,
+    "name": "remera gris html",
+    "description": "Descripción del producto 10",
+    "image": "remeraGrisHtml.jpg",
+    "category": "Categoría 10",
+    "colors": ["naranja","gris", "azul"],
+    "price": 109.99
+},
+{
+    "id": 11,
+    "name": "remera morada git hub",
+    "description": "Descripción del producto 11",
+    "image": "remeraMoradaGithub.jpg",
+    "category": "remeras",
+    "colors": ["verde", "negro"],
+    "price": 119.99
+},
+{
+    "id": 12,
+    "name": "remera negra graph ql",
+    "description": "Descripción del producto 12",
+    "image": "remeraNegraGraphQl.jpg",
+    "category": "remeras",
+    "colors": ["rojo", "blanco"],
+    "price": 129.99
+},
+{
+    "id": 13,
+    "name": "remera negra lass",
+    "description": "remera unisex",
+    "image": "remeraNegraLass.jpg",
+    "category": "remeras",
+    "colors": ["amarillo","negro", "gris"],
+    "price": 139.99
+},
+{
+    "id": 14,
+    "name": "remera node js",
+    "description": "remera unisex ,de algodon node js",
+    "image": "remeraNodejs.jpg",
+    "category": "remeras",
+    "colors": ["morado", "blanco"],
+    "price": 149.99
+},
+{
+    "id": 15,
+    "name": "remera roja git hub",
+    "description": "remera de algodon git hub ,unisex",
+    "image": "remeraRojaGithub.jpg",
+    "category": "remeras",
+    "colors": ["naranja", "negro"],
+    "price": 159.99
+}]

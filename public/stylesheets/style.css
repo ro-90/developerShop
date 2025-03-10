@@ -1,0 +1,308 @@
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5efef;
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+body img{
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  max-width: 100%;
+  height: auto;
+
+}
+.webp{
+  width: 200px;
+  height: 230px;
+}
+a {
+  color: #141414;
+}
+header{
+  background-color: rgb(9, 9, 105);
+ 
+}
+header {
+  position: relative;
+}
+
+
+.busqueda{width: 400px;
+ height: 50px;
+ position: absolute;
+ 
+  margin-left: 500px;
+  margin-bottom:500px;
+}
+
+
+
+.lupa {
+  position: absolute; 
+  top: 150px;
+  right: 500px;
+  text-align: center;
+  margin-bottom: 0; 
+  margin-left: 0;}
+
+
+.logo {
+  position: relative;
+  left: 100px;
+  bottom: 100px;
+  border-radius: 50%;
+ 
+  
+  width: 200px;
+   height:100%;  }
+    .logo:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+   
+  }
+
+
+h1{ font-family: Arial, Helvetica, sans-serif;
+  padding-top: 100px;
+  padding-bottom: -10px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+ 
+  
+
+
+  
+ 
+.banner {width: 100%;
+  height: 200px;
+ 
+  
+}
+  
+ 
+ 
+  
+ 
+nav ul{
+  list-style: none;
+  text-align: center;
+  justify-items: center;
+  display:flex;
+  justify-content: center;
+  padding-inline: 10px;
+  
+  margin-left: 200px;
+}
+
+
+nav ul li {
+ margin: 0 15px;
+  margin-bottom: 100px;
+  ;
+  }
+  nav ul li a {
+    color: #f5efef; 
+    text-decoration: none;
+    margin-bottom: 10px; 
+  }
+  nav ul li a:hover{
+    color: rgb(61, 247, 222);
+    
+  }
+  .burger-menu {
+    color: rgb(228, 228, 235);
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 5px;
+    ;
+    background-color: black;
+    height: 40px;
+    width: 50px;
+    margin-bottom: 0px;
+
+
+    margin-left: 300px;}
+
+ 
+  main {
+    background-color: rgb(129, 128, 126);
+  }
+  .titulo{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 200px; }
+
+.producto {
+  flex: 1 1 200px; 
+  max-width: 200px; 
+  box-sizing: border-box; 
+}
+.producto img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.precio
+  {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #094611; 
+  }
+   a {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+     
+  .boton{text-decoration-color: aliceblue;
+    background-color:#39b54a;
+  }
+
+.tienda{padding: inline 10px;
+display: flex;
+
+justify-content:center;
+
+text-align: center;
+display: block;}
+.Ayuda h2{
+  padding-left: 40px; 
+}
+.Redes{display: flex;
+
+  justify-content:right;
+  
+  text-align: right;
+  display: block;}
+  .Redes li a{
+    list-style: none;
+  }
+  .Redes ul{
+   
+    text-align: center;
+    justify-items: center;
+    display:flex;
+    justify-content: center;
+    padding-inline: 10px;
+  }
+  .Redes h2{
+    margin-right: 100px;
+  }
+  .Redes li{
+    padding-inline: 10px;
+  }
+  .Redes a{
+    color: white;
+  }
+  .Redes a:hover{
+    color: rgb(19, 3, 77);
+  }
+  .Redes img{
+    width: 30px;
+    height: 30px;}
+footer ul {
+list-style: none;}
+footer{display: contents;
+display: flex;
+justify-items: center;
+position: relative;}
+
+footer p{margin-top: 100px;
+margin-left: 50px;}
+footer{background-color:rgb(61, 247, 222);
+}
+
+.Quienes{display: flex;
+
+  justify-content:right;
+  
+  text-align: right;
+  display: block;}
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .producto {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  header nav ul {
+    display: none;
+  }
+
+  .burger-menu {
+    visibility: visible;
+  }
+  footer{
+    flex-direction: column;
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .productos {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .producto {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  header nav {
+    visibility: visible;
+  }
+
+  .burger-menu {
+    visibility: hidden;
+  }
+}
+
+/* Estilos para escritorios */
+@media (min-width: 1025px) {
+  .productos {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .producto {
+    flex: 1 1 200px;
+    max-width: 200px;
+  }
+
+  header nav {
+    visibility: visible;
+  }
+
+  .burger-menu {
+    visibility: hidden;
+  }
+}
+    
+   
+
+   
+   
