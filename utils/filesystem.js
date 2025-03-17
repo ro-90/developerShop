@@ -16,8 +16,7 @@ const stringifyFile = (objeto) => {
     return JSON.stringify(objeto);
 }
 
-module.exports = {
-    readFile,
+module.exports = { readFile,
     writeFile,
     parseFile,
     stringifyFile

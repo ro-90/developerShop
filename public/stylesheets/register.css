@@ -9,6 +9,9 @@ body {
     box-sizing: border-box;
   }
   
+
+   
+  
     background-color: #f5efef;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     flex-direction: column;
@@ -26,6 +29,14 @@ body {
     width: 100%;
     
     text-align: center;
+  }
+  .form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5efef;
+    max-width: 50%;
+  
   }
   
   h2 {

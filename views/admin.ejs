@@ -6,12 +6,14 @@
   <title>Administrar Productos</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" href="/stylesheets/admin.css">
+  <script src="https://kit.fontawesome.com/ab9f47d004.js" crossorigin="anonymous"></script>
+  
 </head>
 <body>
   <%- include('partials/header') %>
   <main>
     <h2>Administrar Productos</h2>
-    <a href="/productAdd" class="btn">Crear Nuevo Producto</a>
+    <a href="/admin" class="btn">Crear Nuevo Producto</a>
     <table>
       <head>
         <tr>
@@ -22,11 +24,11 @@
         </tr>
       </head>
       <body>
-        <% product.forEach(product => { %>
+        <% products.forEach(product => { %>
           <tr>
             <td><%= product.name %></td>
             <td><%= product.description %></td>
-            <td><img src="<%= product.image %>" alt="<%= product.name %>" width="50"></td>
+            <td><img src="<%= product.images %>" alt="<%= product.name %>" width="50"></td>
             <td>
               <a href="/productEdit/<%= product.id %>" class="btn">Editar</a>
               <a href="/productDelete/<%= product.id %>" class="btn">Eliminar</a>
