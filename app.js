@@ -3,23 +3,31 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const sessionVerify = require('./src/middleware/sessionVerify');
+let session = require('express-session');
+let methodOverride = require('method-override');
 
 
 
 
-
-
-
-
-
-var indexRouter = require('./src/routes/index');
 var usersRouter = require('./src/routes/users');
+var indexRouter = require('./src/routes/index');
 let productCarltRouter = require('./src/routes/productCarlt');
 let productDetailRouter = require('./src/routes/productDetail');
 let registerRouter = require('./src/routes/register');
 let loginRouter = require('./src/routes/login');
 let adminRouter = require('./src/routes/admin');
 let productEditRouter = require('./src/routes/productEdit');
+let profileRouter = require('./src/routes/profile');
+const { v4: uuidv4 } = require('uuid');
+const { log } = require('console');
+const { body } = require('express-validator');
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcrypt');
+const fetch = require('node-fetch');
+const { readFile, writeFile, parseFile, stringifyFile } = require('./src/utils/filesystem');
+const { parse } = require('path');
+
 
 
 
@@ -34,9 +42,30 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session
+  ({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  }));
+  app.use(sessionVerify);
+app.use(methodOverride('_method'));
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;
+  res.locals.admin = req.session.admin;
+  next();
+});
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;
+  res.locals.admin = req.session.admin;
+  next();
+}
+);
 
 
-app.use('/', indexRouter);
+
+app.use('/',indexRouter);
 app.use('/users', usersRouter);
 app.use('/productCarlt', productCarltRouter);
 app.use('/productDetail', productDetailRouter);
@@ -44,6 +73,8 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/admin', adminRouter);
 app.use('/productEdit', productEditRouter);
+app.use('/profile', profileRouter);
+ 
 
 
 // catch 404 and forward to error handler

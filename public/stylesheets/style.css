@@ -1,5 +1,5 @@
 
-*{ 
+body *{ 
   margin: 0;
  box-sizing: border-box;
 }
@@ -18,10 +18,7 @@ body img{
   height: auto;
 
 }
-.webp{
-  width: 200px;
-  height: 230px;
-}
+
 a {
   color: #141414;
 }
@@ -134,10 +131,91 @@ nav ul li {
 
     margin-left: 300px;}
 
- 
-  main {
-    background-color: rgb(129, 128, 126);
+    main{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #a5a4a4;
+    }
+  .form-container{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    background-color: #f5efef;
+    
+    max-width: 50%;
+    margin-left: 250px;
+    margin-bottom: 100px;
+    border-style: solid;
+    border-color: rgb(9, 9, 105);
+    
+
+  
   }
+  
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    margin-left: 250px;
+  }
+  
+  
+  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5efef;
+    max-width: 50%;
+    border-style: solid;
+    border-color: rgb(9, 9, 105);
+    box-decoration-break: clone;
+  }
+  
+  
+  label {
+    margin-bottom: 5px;
+    color: #333333;
+    text-align: left;
+  }
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 5px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+   input:hover {
+    border-color: rgb(9, 9, 105);
+  }
+  
+  button {
+    padding: 10px;
+    background-color: rgb(9, 9, 105);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: rgb(100, 100, 131);
+  }
+  
+
+
+
+
+
+
   .titulo{
     text-align: center;
     padding-top: 50px;
@@ -147,12 +225,15 @@ nav ul li {
 
 .productos {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center; 
-  gap: 200px; }
+   }
 
 .producto {
-  flex: 1 1 200px; 
+  
+
+
   max-width: 200px; 
   box-sizing: border-box; 
 }
@@ -160,6 +241,12 @@ nav ul li {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+.webp{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+
 }
 .precio
   {
@@ -224,8 +311,11 @@ footer ul {
 list-style: none;}
 footer{display: contents;
 display: flex;
+flex-wrap: wrap;
+flex:1 1 200px;
+
 justify-items: center;
-position: relative;}
+}
 
 footer p{margin-top: 100px;
 margin-left: 50px;}

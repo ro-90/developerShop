@@ -1,6 +1,6 @@
 const loginController = {
     index:function(req, res,next) {
-    return res.render('login',{ title: 'iniciar secion' });
+    return res.render('users/login',{ title: 'iniciar secion' });
 }
 
 

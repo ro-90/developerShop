@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
   }
+  header {
+    position: relative;
+  }
   
   
 body {
@@ -12,9 +15,9 @@ body {
     margin: 0;
     padding: 0;
 }
- main{width: 100%;
 
- }
+
+ 
  .producto{
     display: flex;
     flex-wrap: wrap;

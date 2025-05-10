@@ -3,14 +3,16 @@
 
    
   /* Estilos generales */
-body {
+
   * {
     margin: 0;
     box-sizing: border-box;
   }
   
 
-   
+   body {
+    display: flex;
+    
   
     background-color: #f5efef;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -36,8 +38,19 @@ body {
     align-items: center;
     background-color: #f5efef;
     max-width: 50%;
+    border-style: solid;
+    border-color: rgb(9, 9, 105);
+    box-decoration-break: clone;
   
   }
+  .msg-error{
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: end;
+    width: 90%;
+}
+
   
   h2 {
     margin-bottom: 20px;

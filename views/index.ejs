@@ -1,102 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <script src="https://kit.fontawesome.com/ab9f47d004.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
-
-<div>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to <%= title %>
-  </p>
+    <title>
+      <%= title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" >
+    
+    <script src="https://kit.fontawesome.com/ab9f47d004.js" crossorigin="anonymous"></script>
+  
+  </head>
 
 
-  <body>
-    <header>
-      <h1>Developer shop</h1>
-      <input class="busqueda" type="search" placeholder="Buscar productos,marcas">
-      <img class="logo" src="./images/imagenes_i/logo.png" alt="logo">
-
-      <div class="lupa"><i class="fa-solid fa-magnifying-glass"></i></div>
+<h1>
+  <%= title %>
+</h1>
+<p>Welcome to <%= title %>
+</p>
 
 
+<body>
+  <header>
+    <h1>Developer shop</h1>
+    <input class="busqueda" type="search" placeholder="Buscar productos,marcas">
+    <img class="logo" src="./images/imagenes_i/logo.png" alt="logo">
 
-      <nav>
-        <ul>
-          <li><a href="/index">Inicio</a></li>
-          <li><a href="/admin">Administrador</a></li>
-          <li><a href="/register">Registrarse</a></li>
-          <li><a href="/productDetail">Detalles de productos</a></li>
-          <li><a href="Preguntas frecuentes">Preguntas frecuentes</a></li>
-          <li><a href="/productEdit">Cambios</a></li>
-          <li><a href="/login">Iniciar Sesión</a><i class="fa-solid fa-user"></i></li>
-          <li><a href="/productCarlt">Mis compras</a><i class="fa-solid fa-cart-shopping"></i></li>
-        </ul>
-      </nav>
-      <div class="burger-menu">
-        <i class="fa-solid fa-bars"></i>
+    <div class="lupa"><i class="fa-solid fa-magnifying-glass"></i></div>
+
+
+
+    <nav>
+      <ul>
+        <li><a href="/index">Inicio</a></li>
+        <li><a href="/admin">Administrador</a></li>
+        <li><a href="/register">Registrarse</a></li>
+        <li><a href="/productDetail">Detalles de productos</a></li>
+        <li><a href="/profile">Preguntas frecuentes</a></li>
+        <li><a href="/productEdit">Cambios</a></li>
+        <li><a href="/login">Iniciar Sesión</a><i class="fa-solid fa-user"></i></li>
+        <li><a href="/productCarlt">Mis compras</a><i class="fa-solid fa-cart-shopping"></i></li>
+      </ul>
+    </nav>
+    <div class="burger-menu">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <section id="inicio">
+      <img class="banner" src="./images/imagenes_i/banner.png" alt="banner">
+
+      <h2>¡Bienvenidos a nuestra tienda de ropa!</h2>
+      <p>En nuestra tienda encontrarás una gran variedad de productos de la mejor calidad y al mejor precio.</p>
+      <p>¡No te pierdas nuestras ofertas!</p>
+    </section>
+
+    <h2 class="titulo"> nuestros productos</h2>
+    <section class="productos">
+
+      <article>
+
+        <div class="producto">
+
+          <a href="./productDetail"> <img src="./images/imagenes_i/remeraBlancaAngular.jpg" alt="remeraBlancaAngular">
+            <h3>remera blanca angular </h3>
+            <p>Descripción: remera de algodón cómoda y suave.</p>
+            <p class="precio"> $25.000</p>
+          </a>
+        </div>
+        <a href="./productCarlt"> <button class="boton">Añadir al carrito</button></a>
+
+        </div>
+      </article>
+      <article>
+
+        <div class="producto">
+          <a href="./productDetail"><img src=./images/imagenes_i/remeraNegraGraphQl.jpg alt="remeraNegraGraphQl">
+            <h3>Remera remera Negra Graph Ql</h3>
+            <p>Descripción:Remera Negra Graph Ql,todos los talles</p>
+            <p class="precio"> $10.000</p>
+          </a>
+          <a href="./productCarlt"><button class="boton">Añadir al carrito</button></a>
+        </div>
+      </article>
+      <div class="producto">
+        <a href="./productDetail"><img src=./images/imagenes_i/4.jpg alt="remeraAmarillaRedux">
+          <h3>Remeras</h3>
+          <p>Descripción: Remera amarilla redux</p>
+          <p class="precio"> $10.000</p>
+        </a>
+        <a href="./productCarlt"> <button class="boton">Añadir al carrito</button></a>
       </div>
-
-    </header>
-
-
-    <main>
-
-
-      <section id="inicio">
-        <img class="banner" src="./images/imagenes_i/banner.png" alt="banner">
-        
-          <h2>¡Bienvenidos a nuestra tienda de ropa!</h2>
-          <p>En nuestra tienda encontrarás una gran variedad de productos de la mejor calidad y al mejor precio.</p>
-          <p>¡No te pierdas nuestras ofertas!</p>
-      </section>
-
-      <h2 class="titulo"> nuestros productos</h2>
-      <section class="productos">
-
-        <article>
-
-          <div class="producto">
-
-            <a href="./productDetail"> <img src="./images/imagenes_i/remeraBlancaAngular.jpg" alt="remeraBlancaAngular">
-              <h3>remera blanca angular </h3>
-              <p>Descripción: remera de algodón cómoda y suave.</p>
-              <p class="precio"> $25.000</p>
-            </a>
-          </div>
-          <a href="./productCarlt"> <button class="boton">Añadir al carrito</button></a>
-
-    </div>
-    </article>
-
-    <div class="producto">
-      <a href="./productDetail"><img src=./images/imagenes_i/remeraNegraGraphQl.jpg alt="remeraNegraGraphQl">
-        <h3>Remera remera Negra Graph Ql</h3>
-        <p>Descripción:Remera Negra Graph Ql,todos los talles</p>
-        <p class="precio"> $10.000</p>
-      </a>
-      <a href="./productCarlt"><button class="boton">Añadir al carrito</button></a>
-    </div>
-    <div class="producto">
-      <a href="./productDetail"><img src=./images/imagenes_i/4.jpg alt="remeraAmarillaRedux">
-        <h3>Remeras</h3>
-        <p>Descripción: Remera amarilla redux</p>
-        <p class="precio"> $10.000</p>
-      </a>
-      <a href="./productCarlt"> <button class="boton">Añadir al carrito</button></a>
-    </div>
 
     </section>
     <h2 class="titulo">Accesorios</h2>
     <section class="productos">
-      <div class="producto">
+      <div class="Accesorios">
         <a href="./productDetail"><img src="./images/imagenes_i/auriculares.jpg" alt="auriculares">
           <h3>Gorra</h3>
           <p>Descripción: Gorra negra con logo de la marca</p>
@@ -105,7 +111,7 @@
         <a href="./productCarlt"><button class="boton">Añadir al carrito</button></a>
       </div>
       <div class="producto">
-        <a href="./productDetail"><img class="webp" src="./images/imagenes_i/tazaCode.webp" alt="taza">
+        <a href="./productDetail"><img src="./images/imagenes_i/tazaCode.webp" alt="taza">
           <h3>taza</h3>
           <p>Descripción: taza con logo code</p>
           <p class="precio">$3.000</p>
@@ -113,68 +119,68 @@
         <a href="./productCarlt"><button class="boton">Añadir al carrito</button></a>
       </div>
       <div class="producto">
-        <a href="./productDetail"><img class="webp" src="./images/imagenes_i/graficoGorra.webp" alt="collar">
+        <a href="./productDetail"><img src="./images/imagenes_i/graficoGorra.webp" alt="collar">
           <h3>Gorra</h3>
           <p>Descripción:Gorra color negra code</p>
         </a>
         <p class="precio"> $8.000</p></a>
         <a href="./productCarlt"><button class="boton">Añadir al carrito</button></a>
       </div>
-      </main>
-      <footer>
-        <section>
-          <div class="tienda">
-            <h2>Tienda</h2>
-            <ul>
-              <li><a>Guia de regalos</a></li>
-              <li><a>Nuevos diseños</a></li>
-              <li><a>Descuentos</a></li>
-              <li><a>Unete a nustra comunidad</a></li>
-            </ul>
-          </div>
-        </section>
-        <section>
-          <div class="Quienes">
-            <h2>Quienes somos</h2>
-            <ul>
-              <li>
-                <a>Programa de asociados</a>
-              </li>
-              <li> <a>Trabaja con nosotros</a></li>
-              <li><a>Afiliados</a></li>
-              <li> <a>Responsabilidad social</a></li>
-            </ul>
-          </div>
-        </section>
-        <section>
-          <div class="Ayuda">
-            <h2>Ayuda</h2>
-            <ul>
-              <li> <a>Envios</a></li>
-              <li> <a>Devoluciones</a></li>
-              <li> <a>Contactos</a></li>
-              <li> <a>Centro de ayudas</a></li>
-            </ul>
-          </div>
-        </section>
-        <section>
-          <div class="Redes">
-            <h2>Seguinos en nuestras Redes</h2>
-            <ul>
-              <li> <a href="facebook">facebook</a><i class="fa-brands fa-facebook"></i></li>
-              <li> <a href="instagram">Instagram</a><i class="fa-brands fa-instagram"></i></li>
-              <li> <a href="twitter">twitter</a><i class="fa-brands fa-twitter"></i></li>
-              <li> <a href="youtube">youtube</a><i class="fa-brands fa-youtube"></i></li>
-            </ul>
-          </div>
-          <p>&copy; 2024 Tienda de Ropa Developer. Todos los derechos reservados.</p>
-      </footer>
+  </main>
+  <footer>
+    <section>
+      <div class="tienda">
+        <h2>Tienda</h2>
+        <ul>
+          <li><a>Guia de regalos</a></li>
+          <li><a>Nuevos diseños</a></li>
+          <li><a>Descuentos</a></li>
+          <li><a>Unete a nustra comunidad</a></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="Quienes">
+        <h2>Quienes somos</h2>
+        <ul>
+          <li>
+            <a>Programa de asociados</a>
+          </li>
+          <li> <a>Trabaja con nosotros</a></li>
+          <li><a>Afiliados</a></li>
+          <li> <a>Responsabilidad social</a></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="Ayuda">
+        <h2>Ayuda</h2>
+        <ul>
+          <li> <a>Envios</a></li>
+          <li> <a>Devoluciones</a></li>
+          <li> <a>Contactos</a></li>
+          <li> <a>Centro de ayudas</a></li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div class="Redes">
+        <h2>Seguinos en nuestras Redes</h2>
+        <ul>
+          <li> <a href="facebook">facebook</a><i class="fa-brands fa-facebook"></i></li>
+          <li> <a href="instagram">Instagram</a><i class="fa-brands fa-instagram"></i></li>
+          <li> <a href="twitter">twitter</a><i class="fa-brands fa-twitter"></i></li>
+          <li> <a href="youtube">youtube</a><i class="fa-brands fa-youtube"></i></li>
+        </ul>
+      </div>
+      <p>&copy; 2024 Tienda de Ropa Developer. Todos los derechos reservados.</p>
+  </footer>
 
 
 
 
 
 
-  </body>
+</body>
 
 </html>

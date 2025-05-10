@@ -1,6 +1,6 @@
 const registerController = {
     index:function(req, res,next) {
-    return res.render('register',{ title: 'registrate' });
+    return res.render('users/register',{ title: 'registrate' });
 }
 
 

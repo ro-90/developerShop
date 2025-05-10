@@ -1,6 +1,6 @@
 const productEditController = {
     index:function(req, res,next) {
-    return res.render('productEdit',{ title: 'Detalles de productos' });
+    return res.render('products/productEdit',{ title: 'Detalles de productos' });
 }
 
 

@@ -1,6 +1,6 @@
 const productDetailController = {
     index:function(req, res,next) {
-    return res.render('productDetail',{ title: 'Detalles de productos' });
+    return res.render('products/productDetail',{ title: 'Detalles de productos' });
 }
 
 

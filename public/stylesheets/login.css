@@ -26,9 +26,14 @@ body {
     color: #333333;
   }
   
-  form {
+  .form-container {
     display: flex;
     flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    border-style: solid;
+    border-color: rgb(9, 9, 105);
+    box-decoration-break: clone;
   }
   
   label {
@@ -44,6 +49,14 @@ body {
     border-radius: 5px;
     font-size: 14px;
   }
+  .msg-error{
+    color: var(--color-secondary);
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: end;
+    width: 90%;
+   }
+
   
   button {
     padding: 10px;

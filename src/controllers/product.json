@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Auriculares con cable",
+        "name": "Auriculares ",
         "description": "auriculares con cable",
         "image": "auriculares.jpg",
         "category": "accesorios",
@@ -49,7 +49,7 @@
 {
     "id": 6,
     "name": "remera amarilla redux",
-    "description": "Descripción del producto 6",
+    "description": "remera amarilla redux,algodon,unisex",
     "image": "remeraAmarillaRedux.jpg",
     "category": "remeras",
     "colors": ["azul","amarillo", "verde"],
@@ -58,7 +58,7 @@
 {
     "id": 7,
     "name": "remera blanca angular",
-    "description": "Descripción del producto 7",
+    "description": "remera blanca angular ,algodon unisex",
     "image": "remeraBlancaAngular.jpg",
     "category": "remeras",
     "colors": ["rojo","blanco", "negro"],
@@ -67,7 +67,7 @@
 {
     "id": 8,
     "name": "remera celeste drupal",
-    "description": "Descripción del producto 8",
+    "description": "remera celeste drupal,algodon unisex",
     "image": "remeraCelesteDrupal.jpg",
     "category": "remeras",
     "colors": ["blanco","celeste", "amarillo"],
@@ -76,7 +76,7 @@
 {
     "id": 9,
     "name": "remera gris",
-    "description": "Descripción del producto 9",
+    "description": "remera gris,algodon unisex",
     "image": "remeraGris.jpg",
     "category": "remeras",
     "colors": ["morado", "gris"],
@@ -85,16 +85,16 @@
 {
     "id": 10,
     "name": "remera gris html",
-    "description": "Descripción del producto 10",
+    "description": "remera gris html,algodon unisex",
     "image": "remeraGrisHtml.jpg",
-    "category": "Categoría 10",
+    "category": "remeras",
     "colors": ["naranja","gris", "azul"],
     "price": 109.99
 },
 {
     "id": 11,
     "name": "remera morada git hub",
-    "description": "Descripción del producto 11",
+    "description": "remera morada git hub,algodon unisex",
     "image": "remeraMoradaGithub.jpg",
     "category": "remeras",
     "colors": ["verde", "negro"],
@@ -103,7 +103,7 @@
 {
     "id": 12,
     "name": "remera negra graph ql",
-    "description": "Descripción del producto 12",
+    "description": "remera negra graph ql,algodon unisex",
     "image": "remeraNegraGraphQl.jpg",
     "category": "remeras",
     "colors": ["rojo", "blanco"],
@@ -129,7 +129,7 @@
 },
 {
     "id": 15,
-    "name": "remera roja git hub",
+    "name": "remera node  js",
     "description": "remera de algodon git hub ,unisex",
     "image": "remeraRojaGithub.jpg",
     "category": "remeras",
