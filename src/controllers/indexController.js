@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-const adminController = {
+const indexController = {
     index: function (req, res, next) {
 
         const archivoProductos = fs.readFileSync(__dirname + "/product.json", "utf-8");
@@ -15,4 +15,4 @@ const adminController = {
 }
 
 
-module.exports = adminController;
+module.exports = indexController;
