@@ -11,9 +11,7 @@ router.get('/search',productController.search);
 router.get('/remove/:id',productController.remove);
 router.get('/add',productController.add);
 router.post('/create',productController.create);
-router.post('/store',productController.store);
 router.put('/update/:id',productController.update);
-router.remove('/delete/:id',productController.delete);
 router.get('/search',productController.search);
 
 

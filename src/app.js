@@ -1,24 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const sessionVerify = require('./middleware/sessionVerify');
-let session = require('express-session');
-let methodOverride = require('method-override');
+const session = require('express-session');
+const methodOverride = require('method-override');
 
 
-var usersRouter = require('./routes/users');
-var indexRouter = require('./routes/index');
-let productCarltRouter = require('./routes/productCarlt');
-let productDetailRouter = require('./routes/productDetail');
-let registerRouter = require('./routes/register');
-let loginRouter = require('./routes/login');
-let adminRouter = require('./routes/admin');
-let productEditRouter = require('./routes/productEdit');
-let profileRouter = require('./routes/profile');
+const usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const productsRouter = require('./routes/products');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -47,13 +41,7 @@ app.use(function(req, res, next) {
 
 app.use('/',indexRouter);
 app.use('/users', usersRouter);
-app.use('/productCarlt', productCarltRouter);
-app.use('/productDetail', productDetailRouter);
-app.use('/register', registerRouter);
-app.use('/login', loginRouter);
-app.use('/admin', adminRouter);
-app.use('/productEdit', productEditRouter);
-app.use('/profile', profileRouter);
+app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
