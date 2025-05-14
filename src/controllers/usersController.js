@@ -2,14 +2,7 @@ const path = require("path");
 const directory = path.join(__dirname,"../Data/user.json");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-/*const {
-    readFile,
-    writeFile,
-    parseFile,
-    stringifyFile
-    } = require("../utils/filesystem");*/
 const fetch = require("node-fetch");
-const { body } = require("express-validator");
 
 const { v4: uuidv4 } = require("uuid");
 const { log } = require("console");
