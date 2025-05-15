@@ -8,7 +8,7 @@ const indexController = {
         const archivoProductos = fs.readFileSync(__dirname + "/product.json", "utf-8");
         const products = JSON.parse(archivoProductos);
 
-        return res.render('admin', { title: 'administracion', products });
+        return res.render('index', { title: 'DevelopShop', products });
     }
 
 
