@@ -30,11 +30,10 @@ app.use(session
     saveUninitialized: true,
     cookie: { secure: false }
   }));
-  app.use(sessionVerify);
+ app.use(sessionVerify);
 app.use(methodOverride('_method'));
 app.use(function(req, res, next) {
   res.locals.user = req.session.user;
-  res.locals.admin = req.session.admin;
   next();
 });
 

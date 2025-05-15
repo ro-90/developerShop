@@ -5,11 +5,10 @@ const registerValidator = require('../validations/registerValidator');
 
 //const validationLogin = require('../middleware/loginVerify');
 const loginValidator = require('../validations/loginValidator');
-const loginVerify = require('../middleware/loginValidate');
-const upload = require('../middleware/uploadfile');
+const loginVerify = require('../middleware/loginVerify');
 
 /* GET users listing. */
-router.get('/login', loginVerify, login);
+router.get('/login', login);
 router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 
@@ -17,11 +16,8 @@ router.get('/logout', logout);
 router.get('/register', register);
 router.post('/register', registerValidator, store);
 
-router.get('/profile/:id', profile);
-router.put('/profile/:id', upload.single('avatar'), update);
-router.delete('/profile/:id', deleteUser);
-router.delete('/profile/:id', function (req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/profile', loginVerify, profile);
+router.put('/profile/:id', update);
+router.delete('/remove/:id', deleteUser);
 
 module.exports = router;

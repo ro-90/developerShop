@@ -11,7 +11,6 @@ module.exports = {
         email: 'admin@gmail.com',
         password: hashSync(process.env.PASSWORD_ADMIN, 10),
         address : "Calle falsa 123",
-        zipCode : "1234",
         roleId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -21,7 +20,6 @@ module.exports = {
         email: 'user@gmail.com',
         password: hashSync("123123", 10),
         address : "Calle falsa 123",
-        zipCode : "1234",
         roleId: 2,
         createdAt: new Date(),
         updatedAt: new Date()

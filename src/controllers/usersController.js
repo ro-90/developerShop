@@ -1,141 +1,146 @@
-const path = require("path");
-const directory = path.join(__dirname,"../Data/user.json");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const fetch = require("node-fetch");
-
+const db = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
-const { log } = require("console");
 
 const usersController = {
   login: (req, res, next) => {
     res.render("users/login", { title: "Login" });
   },
-  processLogin: (req, res, next) => {
-    const { correo } = req.body;
-    const users = parseFile(readFile(directory));
-    const errores = validationResult(req);
-    if (errores.array().length > 0) {
-      res.render("users/login", {errores: errores.mapped(),
-        correo,
-      });
-    } else {
-      const user = users.find((user) => user.correo === correo);
-      const { nombre, id, avatar } = user;
-      console.log(id);
+  processLogin: async (req, res, next) => {
+    try {
+      const { email } = req.body;
+      const errores = validationResult(req);
+      if (!errores.isEmpty()) {
+        res.render("users/login", {
+          errores: errores.mapped(),
+          title: "Login",
+        });
+      } else {
+        const user = await db.User.findOne({
+          where: {
+            email: email,
+          },
+        });
+        const { userName, id } = user;
 
-      req.session.user = { correo, nombre, id, avatar };
-      console.log("body", req.body);
+        req.session.user = { userName,id};
 
-      if (req.body.recuerdame) {
-        res.cookie("user", { correo, nombre, id, avatar }, { maxAge: 1000 * 60 * 30 });
+        if (req.body.remember) {
+          res.cookie("user", { userName, id }, { maxAge: 1000 * 60 * 30 });
+        }
+        res.redirect(`/`);
       }
-      res.redirect(`/users/profile/${id}`);
+    } catch (error) {
+      console.log(error);
     }
+
   },
   logout: (req, res) => {
     req.session.destroy();
     res.clearCookie("user");
-    res.redirect("/users/login");
+    return res.redirect("/");
   },
   register: function (req, res, next) {
-    res.render("users/register", { title: "registro de usuario" });
+    res.render("users/register", { title: "Registro de usuario" });
   },
-  store: function (req, res, next) {
+  store: async (req, res, next) => {
     try {
-      const users = parseFile(readFile(directory));
-      const { nombre, correo, contrasena } = req.body;
+      const { userName, email, password } = req.body;
       const errores = validationResult(req);
 
-      if (errores.array().length > 0) {
+      if (!errores.isEmpty()) {
         res.render("users/register", {
           errores: errores.mapped(),
-          nombre,
-          correo,
-          contrasena,
+          title: "Registro de usuario",
+          oldData: req.body,
         });
       } else {
-        bcrypt.hash(contrasena, 10, function (err, hash) {
-          if (err) {
-            console.log("error en el hash", err);
-          }
 
-          users.push({
-            id: uuidv4(),
-            nombre,
-            correo,
-            contrasena: hash,
-          });
+        await db.User.create({
+          userName: userName.trim(),
+          email: email.trim(),
+          password: bcrypt.hashSync(password, 10),
+          roleId : 2
+        })
 
-          writeFile(directory, stringifyFile(users));
+        return res.redirect("/users/login");
 
-          res.redirect("/users/login");
-        });
       }
     } catch (error) {
       console.log("el error capturado: ", error);
     }
   },
   profile: async (req, res) => {
-    const users = parseFile(readFile(directory));
-    const id = req.params.id;
+    const id = req.session.user.id;
     try {
-      const user = users.find((user) => user.id === id);
+      const user = await db.User.findByPk(id);
       const response = await fetch("https://apis.datos.gob.ar/georef/api/provincias");
-      log("response: ", response);
-      
-      if (!response.ok) {
-        throw new Error("Hubo un problema con la peticion");
-      }
-      
       const data = await response.json();
       const provincias = data.provincias.sort((a, b) => a.nombre.localeCompare(b.nombre));
-      const idProvincia = user.provincia ? user.provincia : provincias[0].id;
+      const provincia = user.province ? user.province : provincias[0].nombre;
 
-      const responseLocalidades = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}&max=500`);
+      const responseLocalidades = await fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${provincia}&max=500`);
       const dataLocalidades = await responseLocalidades.json();
-      const localidades = dataLocalidades.localidades.sort((a, b) => a.nombre.localeCompare(b.nombre));
-
-      res.render("users/profile", { title: "Perfil", user, provincias, localidades });
+      const localidades = dataLocalidades.localidades.sort((a, b) => a.nombre.localeCompare(b.nombre));      
+      
+      return res.render("users/profile", { 
+        title: "Perfil", 
+        ...user.dataValues, 
+        provincias, 
+        localidades 
+      });
     } catch (error) {
-      console.log("error: ", error);      
-      res.render("error", error);
+      console.log(error);
     }
   },
-  update: (req, res) => {
-    console.log("file: ", req.file);
+  update: async (req, res) => {
+    try {
+      const { userName, address, city, province } = req.body;
+      const id = req.session.user.id;
+      const user = await db.User.findByPk(id);
+      const errores = validationResult(req);
 
-    const users = parseFile(readFile(directory));
-    console.log("body:",req.body);
-    const id = req.params.id;
-    const user = users.find((user) => user.id === id);
-    req.body.id = id;
-    req.body.avatar = req.file ? req.file.filename : user.avatar;
-    if (req.body.contrasena && req.body.contrasena2) {
-      req.body.contrasena = bcrypt.hashSync(req.body.contrasena, 10);
-    } else {
-      req.body.contrasena = user.contrasena;
+      if (!errores.isEmpty()) {
+        res.render("users/profile", {
+          errores: errores.mapped(),
+          title: "Perfil",
+          oldData: req.body,
+          provincias,
+          localidades,
+        });
+      } else {
+        await user.update({
+          userName: userName.trim(),
+          address: address.trim(),
+          city: city.trim(),
+          province: province.trim(),
+        },{
+          where: {
+            id: id,
+          },
+        });
+        return res.redirect("/users/profile");
+      }
+    } catch (error) {
+      console.log(error);
     }
-
-    delete req.body.contrasena2;
-
-    const index = users.findIndex((user) => user.id === id);
-    users[index] = req.body;
-    //$2b$10$9dcrAsG4z0Ib78dU/GSyKOFny8bWajoiI7mJnDBmK9UTyc2GEJuUK  
-    writeFile(directory, stringifyFile(users));
-    res.send(req.body);
   },
-  deleteUser: (req, res) => {
-    req.session.destroy();
-    res.clearCookie("user");
-    const users = parseFile(readFile(directory));
-    const id = req.params.id;
-    const newUsers = users.filter((user) => user.id !== id);
-    writeFile(directory, stringifyFile(newUsers));
-    res.redirect("/users/register");
-
+  deleteUser: async (req, res) => {
+    try {
+      req.session.destroy();
+      res.clearCookie("user");
+      await db.User.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.redirect("/users/register");
+    } catch (error) {
+        console.log(error);
+    }
   }
 };
 
 module.exports = usersController;
-// module.exports = usersControllers;
