@@ -9,7 +9,12 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="deleteUserModalLabel"><span class="text-warning"><i class="fas fa-exclamation-triangle"></i></span> Advertencia</h1>
+        <h1 class="modal-title fs-5" id="deleteUserModalLabel">
+          <span class="text-warning"
+            ><i class="fas fa-exclamation-triangle"></i
+          ></span>
+          Advertencia
+        </h1>
         <button
           type="button"
           class="btn-close"
@@ -17,18 +22,23 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body">
-        <form action="/users/remove/<%= id %>?_method=DELETE" method="post">
-            <b>¿Estás seguro/a que queres darte de baja?</b>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                No. Prefiero quedarme
-              </button>
-              <button type="submit" class="btn btn-danger">Sí, me doy de baja</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-      
-      </div>
+      <form action="/users/remove/<%= id %>?_method=DELETE" method="post">
+        <div class="modal-body">
+          <b>¿Estás seguro/a que queres darte de baja?</b>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            No. Prefiero quedarme
+          </button>
+          <button type="submit" class="btn btn-danger">
+            Sí, me doy de baja
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

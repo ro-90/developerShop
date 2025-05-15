@@ -23,6 +23,21 @@ const indexController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    admin : async (req, res, next) => {
+        try {
+            const products = await db.Product.findAll({
+                include: [
+                    { association: 'category' },
+                    { association: 'brand' },
+                    { association: 'colors' },
+                    { association: 'sizes' }
+                ]
+            });
+            return res.render('admin', { title: 'Administrador', products });  
+        }   catch (error) {
+            console.log(error);
+        }
     }
 }
 

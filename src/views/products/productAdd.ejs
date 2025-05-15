@@ -5,46 +5,48 @@
 <%- include('../partials/headerAdmin') %>
 <main class="container">
   <section class="row">
-    <h2 class="my-4">Editar producto: <span class="fw-light"><%= name %></span></h2>
+    <h2 class="my-4">Agregar producto</h2>
     <div class="col-12 col-md-10 mx-auto">
       <div class="card shadow mb-3">
         <div class="card-body">
-          <form action="/products/update/<%= id %>?_method=PUT" class="row" method="POST" enctype="multipart/form-data">
+          <form action="/products/create" class="row" method="POST" enctype="multipart/form-data">
             <div class="form-group mb-3 col-12">
               <label for="name">Nombre</label>
-              <input type="text" class="form-control" id="name" placeholder="Nombre del producto" name="name" value="<%= name %>">
+              <input type="text" class="form-control" id="name" placeholder="Nombre del producto" name="name">
             </div>
             <div class="form-group mb-3 col-12 col-md-6 col-lg-4">
               <label for="price">Precio</label>
-              <input type="number" class="form-control" id="price" placeholder="Precio del producto" name="price" value="<%= price %>">
+              <input type="number" class="form-control" id="price" placeholder="Precio del producto" name="price">
             </div>
             <div class="form-group mb-3 col-12 col-md-6 col-lg-4">
               <label for="category">Categoría</label>
               <select class="form-control" id="category" name="categoryId">
+                <option value="" selected hidden>Seleccione...</option>
                 <% categories.forEach(category => { %>
-                  <option value="<%= category.id %>" <%= category.id == categoryId && 'selected' %>><%= category.name %></option>
+                  <option value="<%= category.id %>"><%= category.name %></option>
                 <% }) %>
               </select>
             </div>
             <div class="form-group mb-3 col-12 col-md-6 col-lg-4">
               <label for="brand">Marca</label>
               <select class="form-control" id="brand" name="brandId">
+                <option value="" selected hidden>Seleccione...</option>
                 <% brands.forEach(brand => { %>
-                  <option value="<%= brand.id %>"  <%= brand.id == brandId && 'selected' %>><%= brand.name %></option>
+                  <option value="<%= brand.id %>"><%= brand.name %></option>
                 <% }) %>
               </select>
             </div>
             <div class="form-group mb-3 col-12">
               <label for="description">Descripción</label>
-              <textarea style="resize: none;" class="form-control" id="description" rows="3" name="description"><%= description %></textarea>
+              <textarea style="resize: none;" class="form-control" id="description" rows="3" name="description"></textarea>
             </div>
             <div class="form-group mb-3 col-12 col-md-6">
               <label for="sizes">Talles</label>
               <hr>
               <div class="d-flex gap-3">
-                <% sizesArray.forEach(size => { %>
+                <% sizes.forEach(size => { %>
                   <div class="form-check">
-                    <input class="form-check-input" <%= sizes.find(s => s.id == size.id) && 'checked' %> type="checkbox" value="<%= size.id %>" id="<%= size.value %>" name="sizes">
+                    <input class="form-check-input" type="checkbox" value="<%= size.id %>" id="<%= size.value %>" name="sizes">
                     <label class="form-check-label" for="<%= size.value %>">
                       <%= size.value %>
                     </label>
@@ -56,9 +58,9 @@
               <label for="sizes">Colores</label>
               <hr>
               <div class="d-flex gap-3 flex-wrap">
-                <% colorsArray.forEach(color => { %>
+                <% colors.forEach(color => { %>
                   <div class="form-check">
-                    <input class="form-check-input" <%= colors.find(c => c.id == color.id) && 'checked' %> type="checkbox" value="<%= color.id %>" id="<%= color.name %>" name="colors">
+                    <input class="form-check-input" type="checkbox" value="<%= color.id %>" id="<%= color.name %>" name="colors">
                     <label class="form-check-label" for="<%= color.name %>">
                       <%= color.name %>
                     </label>
@@ -71,7 +73,7 @@
               <input type="file" class="form-control" id="image" accept="image/*" onchange="previewImage(this)" name="image">
             </div>
             <div class="form-group mb-3 col-12 col-md-6 d-flex justify-content-center">
-              <img src="/images/<%= image %>" alt="Vista previa" id="imgPrev" style="max-width: 100%; height: 200px;">
+              <img src="" alt="Vista previa" id="imgPrev" style="max-width: 100%; height: 200px; display: none;">
             </div>
             <div class="form-group mb-3">
               <button type="submit" class="btn btn-primary">Guardar</button>

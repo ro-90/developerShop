@@ -7,7 +7,7 @@ const storage = multer.diskStorage({
     console.log("ingreso al middlewarefile", file);
     console.log(__dirname);
     
-    cb(null,path.join(__dirname,'../public/images/users'));
+    cb(null,path.join('public','images'));
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = path.basename(file.originalname, path.extname(file.originalname)) + "-" + Date.now() + "-" + uuidv4() + path.extname(file.originalname);
@@ -16,10 +16,8 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-
-  console.log("fileFilter: ", file);
   
-  const filtro = /\.(jpg|jpeg|png|gif)$/;
+  const filtro = /\.(jpg|jpeg|png|gif|webp)$/;
   if (filtro.test(file.originalname)) {// To accept this file pass `false`, like so:
     cb(null, true);
   } else {
