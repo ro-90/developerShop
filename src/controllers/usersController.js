@@ -23,12 +23,12 @@ const usersController = {
             email: email,
           },
         });
-        const { userName, id } = user;
+        const { userName, id, roleId } = user;
 
-        req.session.user = { userName,id};
+        req.session.user = { userName,id, roleId};
 
         if (req.body.remember) {
-          res.cookie("user", { userName, id }, { maxAge: 1000 * 60 * 30 });
+          res.cookie("user", { userName, id, roleId }, { maxAge: 1000 * 60 * 30 });
         }
         res.redirect(`/`);
       }
