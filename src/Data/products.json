@@ -1,0 +1,296 @@
+[
+  {
+    "id": 1,
+    "name": "Auriculares Code",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 50000,
+    "brand": "Code",
+    "sizes": [
+      "NONE"
+    ],
+    "colors": [
+      "Negro"
+    ],
+    "category": "Accesorios",
+    "image": "auriculares.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Buzo JAVA",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 25000,
+    "brand": "JAVA",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"  
+    ],
+    "colors": [
+      "Negro",
+      "Marron"
+    ],
+    "category": "Indumentaria",
+    "image": "buzoNegraJava.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Buzo Google",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 80000,
+    "brand": "Google",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Negro",
+      "Verde"
+    ],
+    "category": "Indumentaria",
+    "image": "buzoNegroGoogle.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Buzo Javascript",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 100000,
+    "brand": "Javascript",
+   "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": ["Bordo", "Verde"],
+    "category": "Indumentaria",
+    "image": "buzoNegroJs.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Remera Javascript",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 60000,
+    "brand": "Javascript",
+  "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Amarillo"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraAmarillaJs.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Remera Redux",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 90000,
+    "brand": "Redux",
+  "sizes": [
+    "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": ["Azul","Amarillo", "Verde"],
+
+    "category": "Indumentaria",
+    "image": "remeraAmarillaRedux.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Remera Angular",
+    "description": "Estas zapatillas adidas estilizadas y fáciles de combinar eUnisexigen un lugar especial en tu colección.",
+    "price": 100,
+    "brand": "Angular",
+    "model": "Grand Court AlphaCL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": ["Bordo","Blanco", "Negro"],
+    "category": "Indumentaria",
+    "image": "remeraBlancaAngular.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Remera Vue",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 60000,
+    "brand": "Vue",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro",
+      "Gris",
+      "Morado"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraGris.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Remera Drupal",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 70000,
+    "brand": "Drupal",
+   "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Negro",
+      "Celeste"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraCelesteDrupal.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Remera HTML",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 80000,
+    "brand": "HTML",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Gris",
+      "Naranja",
+      "Azul"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraGrisHtml.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Remera Github",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 40000,
+    "brand": "GitHub",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Verde",
+      "Negro",
+      "Morado"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraMoradaGithub.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Remera GraphQL",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 99000,
+    "brand": "GraphQL",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Rojo",
+      "Blanco"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraNegraGraphQl.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Remera Sass",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 50000,
+    "brand": "Sass",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Amarillo",
+      "Gris"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraNegraLass.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Remera NodeJS",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 100000,
+    "brand": "NodeJS",
+   "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Amarillo",
+      "Gris"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraNodejs.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Remera TypeScript",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 70000,
+    "brand": "TypeScript",
+   "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blanco",
+      "Celeste",
+      "Gris"
+    ],
+    "category": "Indumentaria",
+    "image": "remeraBlancaTsç.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Taza Code",
+    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
+    "price": 25000,
+    "brand": "Code",
+    "sizes": [
+     "NONE"
+    ],
+    "colors": [
+      "Negro",
+      "Blanco"
+    ],
+    "category": "Accesorios",
+    "image": "tazaCode.webp"
+  }
+]
