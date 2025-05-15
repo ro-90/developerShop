@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Auriculares con cable",
+    "name": "Auriculares Code",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 50000,
     "brand": "Code",
@@ -16,7 +16,7 @@
   },
   {
     "id": 2,
-    "name": "Buzo negro JAVA",
+    "name": "Buzo JAVA",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 25000,
     "brand": "JAVA",
@@ -35,7 +35,7 @@
   },
   {
     "id": 3,
-    "name": "Buzo negro Google",
+    "name": "Buzo Google",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 80000,
     "brand": "Google",
@@ -55,7 +55,7 @@
   },
   {
     "id": 4,
-    "name": "Buzo negro Javascript",
+    "name": "Buzo Javascript",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 100000,
     "brand": "Javascript",
@@ -70,7 +70,7 @@
   },
   {
     "id": 5,
-    "name": "Remera amarilla Javascript",
+    "name": "Remera Javascript",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 60000,
     "brand": "Javascript",
@@ -87,7 +87,7 @@
   },
   {
     "id": 6,
-    "name": "Remera amarilla Redux",
+    "name": "Remera Redux",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 90000,
     "brand": "Redux",
@@ -104,7 +104,7 @@
   },
   {
     "id": 7,
-    "name": "Remera blanca Angular",
+    "name": "Remera Angular",
     "description": "Estas zapatillas adidas estilizadas y fáciles de combinar eUnisexigen un lugar especial en tu colección.",
     "price": 100,
     "brand": "Angular",
@@ -121,7 +121,7 @@
   },
   {
     "id": 8,
-    "name": "Remera gris Vue",
+    "name": "Remera Vue",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 60000,
     "brand": "Vue",
@@ -141,7 +141,7 @@
   },
   {
     "id": 9,
-    "name": "Remera celeste Drupal",
+    "name": "Remera Drupal",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 70000,
     "brand": "Drupal",
@@ -160,7 +160,7 @@
   },
   {
     "id": 10,
-    "name": "Remera gris HTML",
+    "name": "Remera HTML",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 80000,
     "brand": "HTML",
@@ -180,7 +180,7 @@
   },
   {
     "id": 11,
-    "name": "Remera morada Github",
+    "name": "Remera Github",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 40000,
     "brand": "GitHub",
@@ -200,7 +200,7 @@
   },
   {
     "id": 12,
-    "name": "Remera negra GraphQL",
+    "name": "Remera GraphQL",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 99000,
     "brand": "GraphQL",
@@ -219,7 +219,7 @@
   },
   {
     "id": 13,
-    "name": "Remera negra Sass",
+    "name": "Remera Sass",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 50000,
     "brand": "Sass",
@@ -259,7 +259,7 @@
   },
   {
     "id": 15,
-    "name": "Remera TypeScript estampada",
+    "name": "Remera TypeScript",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 70000,
     "brand": "TypeScript",
@@ -279,7 +279,7 @@
   },
   {
     "id": 16,
-    "name": "Taza de aluminio con Code",
+    "name": "Taza Code",
     "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem.",
     "price": 25000,
     "brand": "Code",
