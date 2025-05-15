@@ -127,17 +127,20 @@ const usersController = {
       console.log(error);
     }
   },
-  deleteUser: (req, res) => {
-    req.session.destroy();
-    res.clearCookie("user");
-    const users = parseFile(readFile(directory));
-    const id = req.params.id;
-    const newUsers = users.filter((user) => user.id !== id);
-    writeFile(directory, stringifyFile(newUsers));
-    res.redirect("/users/register");
-
+  deleteUser: async (req, res) => {
+    try {
+      req.session.destroy();
+      res.clearCookie("user");
+      await db.User.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+      res.redirect("/users/register");
+    } catch (error) {
+        console.log(error);
+    }
   }
 };
 
 module.exports = usersController;
-// module.exports = usersControllers;

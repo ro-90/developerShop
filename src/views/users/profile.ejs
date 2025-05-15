@@ -67,13 +67,17 @@
                   </select>
               </div>
                 <div class="form-group my-3">
-                  <button class="btn btn-dark" type="submit">Actualizar</button>
+                  <button class="btn btn-dark" type="submit">Actualizar datos</button>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+                    Darme de baja
+                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </main>
+      <%- include('../partials/modal-delete-user') %>
       <%- include('../partials/footer') %>
       <script src="/javascripts/profile.js"></script>
   </body>
