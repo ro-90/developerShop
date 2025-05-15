@@ -11,36 +11,41 @@
 
           <div class="card shadow">
             <div class="card-body">
-              <form action="/registerController" method="post" class="row">
+              <form action="/users/register" method="post" class="row">
                 <div class="form-group mb-3">
-                  <label for="name" class="form-label">Nombre:</label>
-                  <input type="text" id="name" name="name" class="form-control" required>
-                  <% if(locals.errores && locals.errores.nombre) {%>
-                    <p class="msg-error"> <i class="fa-solid fa-circle-exclamation"></i>
-                      <%= errores.nombre.msg %>
+                  <label for="userName" class="form-label">Nombre de ususario:</label>
+                  <input type="text" id="userName" value="<%= locals.oldData && oldData.userName %>" name="userName" class="form-control <%= locals.errores && errores.userName && 'is-invalid' %>">
+                  <% if(locals.errores && locals.errores.userName) {%>
+                    <p class="text-danger mt-2"> <i class="fa-solid fa-circle-exclamation"></i>
+                      <%= errores.userName.msg %>
                     </p>
                     <% } %>
                 </div>
                 <div class="form-group mb-3">
 
                   <label for="email" class="form-label">Correo Electrónico:</label>
-                  <input type="email" id="email" name="email" class="form-control"  required>
-                  <% if(locals.errores && locals.errores.correo) {%>
-                    <p class="msg-error"><i class="fa-solid fa-circle-exclamation"></i>
-                      <%= errores.correo.msg %>
+                  <input type="email" id="email" value="<%= locals.oldData && oldData.email %>" name="email" class="form-control <%= locals.errores && errores.email && 'is-invalid' %>" >
+                  <% if(locals.errores && locals.errores.email) {%>
+                    <p class="text-danger mt-2"><i class="fa-solid fa-circle-exclamation"></i>
+                      <%= errores.email.msg %>
                     </p>
                     <% } %>
                 </div>
                 <div class="form-group mb-3">
                   <label for="password" class="form-label">Contraseña:</label>
-                  <input type="password" id="password" name="password" class="form-control"  required>
+                  <input type="password" id="password" name="password" class="form-control <%= locals.errores && errores.password && 'is-invalid' %>" >
+                  <% if(locals.errores && locals.errores.password) {%>
+                    <p class="text-danger mt-2"><i class="fa-solid fa-circle-exclamation"></i>
+                      <%= errores.password.msg %>
+                    </p>
+                    <% } %>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="confirm-password" class="form-label">Confirmar Contraseña:</label>
-                  <input type="password" id="confirm-password" name="confirm-password" class="form-control"  required>
-                  <% if(locals.errores && locals.errores.contrasena) {%>
-                    <p class="msg-error"><i class="fa-solid fa-circle-exclamation"></i>
-                      <%= errores.contrasena.msg %>
+                  <label for="confirmPassword" class="form-label">Confirmar Contraseña:</label>
+                  <input type="password" id="confirmPassword" name="confirmPassword" class="form-control <%= locals.errores && errores.confirmPassword && 'is-invalid' %>">
+                  <% if(locals.errores && locals.errores.confirmPassword) {%>
+                    <p class="text-danger mt-2"><i class="fa-solid fa-circle-exclamation"></i>
+                      <%= errores.confirmPassword.msg %>
                     </p>
                     <% } %>
                 </div>

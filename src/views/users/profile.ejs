@@ -1,101 +1,81 @@
-<%- include('../partials/head',{title:"Profile"}) %>
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
 
-<body>
-  <%- include('../partials/header') %>
-  <main>
-    <form action="/users/profile/<%=user.id%>?_method=PUT" method="post" enctype="multipart/form-data">
+  <body class="bg-light">
+    <%- include('../partials/header') %>
+      <main class="container">
+        <h2 class="my-4">Mi perfil de usuario</h2>
 
-      <label for="name">Nombre</label>
+        <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
-      <input type="text" name="nombre" id="name" min="6" max="50" value="<%= locals.user && locals.user.nombre ? user.nombre : "" %>">
-      <% if(locals.errores && locals.errores.nombre) {%>
-      <p><%= errores.nombre.msg %></p>
-      <% } %>
+          <div class="card shadow">
+            <div class="card-body">
+              <form action="/users/profile/<%= id %>?_method=PUT" method="post" class="row">
+                <div class="form-group mb-3">
+                  <label for="userName" class="form-label">Nombre de ususario:</label>
+                  <input type="text" id="userName" value="<%= userName %>" name="userName" class="form-control <%= locals.errores && errores.userName && 'is-invalid' %>">
+                  <% if(locals.errores && locals.errores.userName) {%>
+                    <p class="text-danger mt-2"> <i class="fa-solid fa-circle-exclamation"></i>
+                      <%= errores.userName.msg %>
+                    </p>
+                    <% } %>
+                </div>
+                <div class="form-group mb-3">
 
-      <label for="email">Email</label>
-      <input type="email" name="correo" id="email" required value="<%= locals.user && locals.user.correo ? user.correo : ""%>">
+                  <label for="email" class="form-label">Correo Electrónico:</label>
+                  <input type="email" id="email" value="<%= email %>" name="email" class="form-control <%= locals.errores && errores.email && 'is-invalid' %>" >
+                  <% if(locals.errores && locals.errores.email) {%>
+                    <p class="text-danger mt-2"><i class="fa-solid fa-circle-exclamation"></i>
+                      <%= errores.email.msg %>
+                    </p>
+                    <% } %>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="address" class="form-label">Domicilio (calle y altura):</label>
+                  <input type="address" id="address" name="address" class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="confirmPassword" class="form-label">Provincia:</label>
+                  <select class="form-select" name="province" id="province">
+                    <% if (!province) { %>
+                      <option value="" selected hidden>Seleccione...</option>
+                      <% provincias.forEach(provincia => { %>
+                        <option value="<%= provincia.nombre %>"><%= provincia.nombre %></option>
+                      <% }) %>
+                    <% } else { %>
+                      <% provincias.forEach(provincia => { %>
+                        <option value="<%= provincia.nombre %>" <%= provincia.nombre == province && 'selected' %>><%= provincia.nombre %></option>
+                      <% }) %>
+                    <% } %>
+                  </select>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="confirmPassword" class="form-label">Ciudad:</label>
+                  <select class="form-select" name="city" id="city">
+                    <% if (!city) { %>
+                      <option value="" selected hidden>Seleccione...</option>
+                      <% localidades.forEach(localidad => { %>
+                        <option value="<%= localidad.nombre %>"><%= localidad.nombre %></option>
+                      <% }) %>
+                    <% } else { %>
+                      <% localidades.forEach(localidad => { %>
+                        <option value="<%= localidad.nombre %>" <%= localidad.nombre == city && 'selected' %>><%= localidad.nombre %></option>
+                      <% }) %>
+                    <% } %>
+                  
+                  </select>
+              </div>
+                <div class="form-group my-3">
+                  <button class="btn btn-dark" type="submit">Actualizar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+      <script src="/javascripts/profile.js"></script>
+  </body>
 
-      <% if(locals.errores && locals.errores.correo) {%>
-      <p><%= errores.correo.msg %></p>
-      <% } %>
-
-      <label for="password">Contraseña</label>
-      <input type="password" name="contrasena" id="password" value="">
-
-      <% if(locals.errores && locals.errores.contrasena) {%>
-      <p><%= errores.contrasena.msg %></p>
-      <% } %>
-
-      <label for="password">Confirmar contraseña</label>
-      <input type="password" name="contrasena2" id="password" value="">
-
-      <% if(locals.errores && locals.errores.avatar) {%>
-      <p><%= errores.avatar.msg %></p>
-      <% } %>
-
-
-      <label for="dni">Ingrese numero de documento DNI</label>
-      <input type="number" name="dni" id="dni" value="<%= locals.user && locals.user.dni ? user.dni : ""%>">
-
-      <% if(locals.errores && locals.errores.dni) {%>
-      <p><%= errores.dni.msg %></p>
-      <% } %>
-
-      <h2>Dirección</h2>
-
-      <label for="provincia">Provincia</label>
-      <select name="provincia" id="provincia">
-        <% provincias.forEach(provincia => { %>            
-        <option value="<%= provincia.id %>" <%= locals.user && locals.user.provincia && locals.user.provincia == provincia.id ? "selected" : "" %>><%= provincia.nombre%></option>
-        <% }); %>
-      </select>
-
-      <% if(locals.errores && locals.errores.provincia) {%>
-      <p><%= errores.provincia.msg %></p>
-      <% } %>
-
-      <label for="localidad">localidad</label>
-      <select name="localidad" id="localidad">
-        <% localidades.forEach(localidad => { %>
-            <option value="<%= localidad.id %>" <%= locals.user && locals.user.localidad && locals.user.localidad == localidad.id ? "selected" : "" %>><%= localidad.nombre%></option>
-            <% }); %>
-      </select>
-
-      <% if(locals.errores && locals.errores.localidad) {%>
-      <p><%= errores.localidad.msg %></p>
-      <% } %>
-
-      <label for="calle">Calle</label>
-      <input type="text" name="calle" id="calle" value="<%= locals.user && locals.user.calle ? user.calle : ""%>">
-
-      <% if(locals.errores && locals.errores.calle) {%>
-      <p><%= errores.calle.msg %></p>
-      <% } %>
-
-      <label for="altura">Altura</label>
-      <input type="text" name="altura" id="altura" value="<%= locals.user && locals.user.altura ? user.altura : ""%>">
-
-      <% if(locals.errores && locals.errores.altura) {%>
-      <p><%= errores.altura.msg %></p>
-      <% } %>
-
-      <label for="telefono">telefono</label>
-      <input type="number" name="telefono" id="telefono" value="<%= locals.user && locals.user.telefono ? user.telefono : ""%>">
-
-      <% if(locals.errores && locals.errores.telefono) {%>
-      <p><%= errores.telefono.msg %></p>
-      <% } %>
-
-      <input type="file" name="avatar" id="avatar" accept=".jpg,.png " value="<%= locals.user && locals.user.avatar ? user.avatar : ""%>">
-
-      <button type="submit">Actualizar</button>
-    </form>
-
-    <form action="/users/profile/<%=user.id%>?_method=DELETE" method="post">
-      <button type="submit" onclick="">Eliminar cuenta</button>
-    </form>
-  </main>
-  <footer>
-  </footer>
-  <script src="/js/profile.js"></script>
-</body>
+</html>
