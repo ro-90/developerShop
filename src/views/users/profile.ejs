@@ -1,7 +1,7 @@
-<%- include('../partial/head',{title:"Profile"}) %>
+<%- include('../partials/head',{title:"Profile"}) %>
 
 <body>
-  <%- include('../partial/header') %>
+  <%- include('../partials/header') %>
   <main>
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="post" enctype="multipart/form-data">
 

@@ -1,37 +1,41 @@
-const path = require("path");
-const directory = path.join(__dirname,"../Data/user.json");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const fetch = require("node-fetch");
-
+const db = require("../database/models");
 const { v4: uuidv4 } = require("uuid");
-const { log } = require("console");
 
 const usersController = {
   login: (req, res, next) => {
     res.render("users/login", { title: "Login" });
   },
-  processLogin: (req, res, next) => {
-    const { correo } = req.body;
-    const users = parseFile(readFile(directory));
-    const errores = validationResult(req);
-    if (errores.array().length > 0) {
-      res.render("users/login", {errores: errores.mapped(),
-        correo,
-      });
-    } else {
-      const user = users.find((user) => user.correo === correo);
-      const { nombre, id, avatar } = user;
-      console.log(id);
+  processLogin: async (req, res, next) => {
+    try {
+      const { email } = req.body;
+      const errores = validationResult(req);
+      if (!errores.isEmpty()) {
+        res.render("users/login", {
+          errores: errores.mapped(),
+          title: "Login",
+        });
+      } else {
+        const user = await db.User.findOne({
+          where: {
+            email: email,
+          },
+        });
+        const { userName, id } = user;
 
-      req.session.user = { correo, nombre, id, avatar };
-      console.log("body", req.body);
+        req.session.user = { userName,id};
 
-      if (req.body.recuerdame) {
-        res.cookie("user", { correo, nombre, id, avatar }, { maxAge: 1000 * 60 * 30 });
+        if (req.body.remember) {
+          res.cookie("user", { userName, id }, { maxAge: 1000 * 60 * 30 });
+        }
+        res.redirect(`/users/profile/${id}`);
       }
-      res.redirect(`/users/profile/${id}`);
+    } catch (error) {
+      console.log(error);
     }
+
   },
   logout: (req, res) => {
     req.session.destroy();
@@ -77,17 +81,10 @@ const usersController = {
     }
   },
   profile: async (req, res) => {
-    const users = parseFile(readFile(directory));
     const id = req.params.id;
     try {
-      const user = users.find((user) => user.id === id);
+      const user = await db.User.findByPk(id);
       const response = await fetch("https://apis.datos.gob.ar/georef/api/provincias");
-      log("response: ", response);
-      
-      if (!response.ok) {
-        throw new Error("Hubo un problema con la peticion");
-      }
-      
       const data = await response.json();
       const provincias = data.provincias.sort((a, b) => a.nombre.localeCompare(b.nombre));
       const idProvincia = user.provincia ? user.provincia : provincias[0].id;
@@ -96,9 +93,9 @@ const usersController = {
       const dataLocalidades = await responseLocalidades.json();
       const localidades = dataLocalidades.localidades.sort((a, b) => a.nombre.localeCompare(b.nombre));
 
-      res.render("users/profile", { title: "Perfil", user, provincias, localidades });
+      return res.render("users/profile", { title: "Perfil", user, provincias, localidades });
     } catch (error) {
-      console.log("error: ", error);      
+      console.log("error: ", error);
       res.render("error", error);
     }
   },
@@ -106,7 +103,7 @@ const usersController = {
     console.log("file: ", req.file);
 
     const users = parseFile(readFile(directory));
-    console.log("body:",req.body);
+    console.log("body:", req.body);
     const id = req.params.id;
     const user = users.find((user) => user.id === id);
     req.body.id = id;
